@@ -1,0 +1,73 @@
+<wxs module="m1">
+var Distance=function(lat1, lng1, lat2, lng2) {
+  lat1 = lat1 || 0;
+  lng1 = lng1 || 0;
+  lat2 = lat2 || 0;
+  lng2 = lng2 || 0;
+  if(!lat1)
+   {
+   return 0;}
+  else
+       { var rad1 = lat1 * Math.PI / 180.0;
+        var rad2 = lat2 * Math.PI / 180.0;
+        var a = rad1 - rad2;
+        var b = lng1 * Math.PI / 180.0 - lng2 * Math.PI / 180.0;
+        var r = 6378137;
+        var distance = r * 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(rad1) * Math.cos(rad2) * Math.pow(Math.sin(b / 2), 2)));
+  
+  return distance;}}
+
+module.exports.Distance = Distance;
+</wxs>
+<wxs module="m2">
+var Xiaoshu=function(x) {
+        if(x==0)
+         {return '未知';}
+        else if(x<=1000)
+         {return x.toFixed(2)+'m';}
+        else
+         return (x/1000).toFixed(2)+'km';
+              
+        
+ }
+
+module.exports.Xiaoshu = Xiaoshu;
+</wxs>
+
+<view id="0" class="helplist-container">
+
+
+<block wx:for="{{array}}" wx:for-item="item" wx:for-index="idx" >
+  <view wx:if="{{item.condition == 0}}" class="help-list" bindtap="openMap" data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}" data-iconpath="{{item.picUrl}}"
+  data-nickname="{{item.userId}}" data-headicon="{{item.userUrl}}" data-payscore="{{item.srvCost}}" data-title="{{item.srvTitle}}" 
+  data-content="{{item.srvDesc}}"  data-location="{{item.posDes}}" data-taskId="{{item._id}}" data-openid="{{item._openid}}">
+   <view class="help-list-top">
+        <view class="help-list-top-left">
+            <text class="userName">{{item.userId}}</text>
+        </view>
+        <view class="help-list-top-right">
+         <text>悬赏：{{item.srvCost}}积分</text>   
+        </view>
+   </view> 
+
+   <view class='help-list-bottomImg-container' style="background:{{randomColorArr[idx]}}">
+   <image class="help-list-bottomImg" style="background:{{randomColorArr[idx]}}"></image>
+   </view> 
+   
+    <view class="help-list-bottom">
+    <view class="help-list-bottom-left">
+            <text>{{item.srvTitle}}</text>
+    </view>
+    <view class="help-list-bottom-right">
+            <text>{{m2.Xiaoshu(m1.Distance(item.latitude, item.longitude,latitudeCur, longitudeCur))}}</text>
+    </view>
+    </view> 
+  </view>
+</block>
+
+<view class="hint" hidden="{{hintFlag}}">
+        <image src="../../images/nobody.png"></image>
+</view>
+
+</view>
+

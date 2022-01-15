@@ -1,0 +1,135 @@
+page{
+      background-color: #f6f6f6;
+}
+
+.container{
+    background-color: #f6f6f6;
+    height:100%;
+}
+.userinfo {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+}
+.getuserInfobutton{
+
+    align-items: center;
+    border-radius: 50rpx;
+    background-color: #dcdcdc;
+}
+.userinfo-avatar {
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+}
+  
+.userinfo-nickname {
+    color: #aaa;
+    font-size: inherit;
+}
+  
+.fl{
+    float:left;
+}
+
+.fr{
+    float:right;
+}
+
+.item{
+    width:100%;
+    height: 84px;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    background: #fff;
+}
+
+.itemLeft{
+    width: 44%;
+    margin-top: 10px;
+    height: 60px;
+}
+
+.personImg{
+    width:60px;
+    height:60px;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+.personName{
+    color:black;
+    margin-top: 21px;
+    text-indent:8px;
+}
+
+.itemRight{
+    text-align: right;
+    border: 0;
+    position: fixed;
+    font-size: 16px;
+    color: #e8ae26;
+    margin-top: 32px;
+    margin-right: 5%;
+    width: 50%;
+    top:20rpx;
+    right:0rpx;
+}
+
+.upSpace{
+    height: 18px;
+    font-size: 12px;
+    color: #666;
+}
+
+.itemHelp1{
+    position: relative;
+    top:20rpx;
+    width:100%;
+    height: 45px;
+    border-bottom: 1px solid #d4d4d4;
+    border-top: 1px solid #d4d4d4;
+    margin-top: 20rpx;
+    background: #fff;
+}
+.itemHelp2{
+    width:100%;
+    height: 45px;
+    border-bottom: 1px solid #d4d4d4;
+    background: #fff;
+}
+.itemHelpLeft{
+    width: 44%;
+    margin-top: 5px;
+    height: 40px;
+}
+
+.helpImg{
+    width:40px;
+    height:40px;
+    margin-left: 3px;
+}
+
+.helpName{
+    color:black;
+    margin-top: 7px;
+    margin-left: 6px;
+}
+
+.itemHelpRight{
+    text-align: right;
+    border: 0;
+    font-size: 16px;
+    color: #e8ae26;
+    margin-top: 12px;
+    margin-right: 1%;
+    width: 50%;
+}
+
+.arrowImg{
+    width:20px;
+    height:20px;
+    margin-left: 3px;
+}

@@ -1,0 +1,38 @@
+<view class="container">
+    <view class="item">
+        <view class="userinfo">
+            <button class="getuserInfobutton" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+            <block wx:else>
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            <view class="itemRight fr">
+                <text class="fr">我的积分:{{credit}}</text>
+            </view>
+            </block>
+        </view>
+    </view>
+
+    <view class="upSpace">
+    </view>
+
+    <view class="itemHelp1" bindtap="myToHelpPage">
+        <view class="itemHelpLeft fl">
+            <image src="../../images/tohelp.png" class="helpImg fl"></image>
+            <text class="fl helpName">我帮助的</text>
+        </view>
+        <view class="itemHelpRight fr">
+           <image src="../../images/me/arrow.png" class="arrowImg fr"></image>
+        </view>
+    </view>
+
+    <view class="itemHelp2" bindtap="myGetHelpPage">
+        <view class="itemHelpLeft fl">
+            <image src="../../images/gethelp.png" class="helpImg fl"></image>
+            <text class="fl helpName">我求助的</text>
+        </view>
+        <view class="itemHelpRight fr">
+           <image src="../../images/me/arrow.png" class="arrowImg fr"></image>
+        </view>
+    </view>
+
+</view>
